@@ -1,0 +1,17 @@
+$jumbotron-bg: rgba(255, 255, 255, 0.3);
+$primary-color: #8c14fc;
+$secondary-color: #a537fd;
+
+
+@import "bootstrap";
+.container-background{
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-image: url(image_path('background.jpg'));
+ }
+
+ .nav-main{
+ 	font-size: 1.5rem;
+ 	text-transform: uppercase;
+ }

@@ -1,0 +1,19 @@
+current directory: /home/tatarinmaxx/instapic/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+/usr/bin/ruby2.3 -r ./siteconf20181219-19148-4gh6zf.rb extconf.rb
+creating Makefile
+
+current directory: /home/tatarinmaxx/instapic/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/tatarinmaxx/instapic/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/tatarinmaxx/instapic/vendor/bundle/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20181219-19148-1h6x859/byebug

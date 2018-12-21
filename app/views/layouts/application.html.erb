@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instapic</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <div class="container-fluid container-background">
+    <div class="container">
+      
+      <ul class="nav nav-main">
+        <li class="nav-item nav-link">
+          <%= link_to "Main", root_path %>
+        </li>
+        <li class="nav-item nav-link">
+          <%= link_to "About", pages_about_path %>
+        </li>
+      </ul>
+    
+    
+    <%= yield %>
+    </div>
+  </div><!-- container-fluid container-background -->
+  </body>
+</html>
