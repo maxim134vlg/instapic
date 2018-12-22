@@ -21,6 +21,10 @@
         <li class="nav-item nav-link">
           <%= link_to "About", pages_about_path %>
         </li>
+        <li class="nav-item nav-link">
+          <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
+        </li>
+        
       </ul>
     
     <p class="notice"><%= notice %></p>
