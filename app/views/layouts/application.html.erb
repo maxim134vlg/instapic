@@ -4,29 +4,17 @@
     <title>Instapic</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
-  <div class="container-fluid container-background">
+  <div class="container-fluid container-background container-login">
+    <%= render "layouts/navigation" %>
     <div class="container">
-      
-      <ul class="nav nav-main">
-        <li class="nav-item nav-link">
-          <%= link_to "Main", root_path %>
-        </li>
-        <li class="nav-item nav-link">
-          <%= link_to "About", pages_about_path %>
-        </li>
-        <li class="nav-item nav-link">
-          <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
-        </li>
-        
-      </ul>
-    
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     

@@ -1,0 +1,46 @@
+<%if user_signed_in?%>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-liq">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav nav-main d-flex justify-content-end">
+      <li class="nav-item nav-link">
+        <%= link_to "INSTApic", root_path, class: "branding"%>
+      </li>
+      <li class="nav-item nav-link">
+        <%= link_to "About", pages_about_path %>
+      </li>
+      <li class="nav-item nav-link">
+        <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<%else%>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-liq">
+  <span class="navbar-brand mb-0 h1 main-logo branding">INSTApic</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav nav-main d-flex justify-content-end">
+      <!-- <li class="nav-item nav-link">
+        <%= link_to "INSTApic", root_path%>
+      </li> -->
+      <li class="nav-item nav-link">
+        <%= link_to "About", pages_about_path %>
+      </li>
+      <li class="nav-item nav-link">
+        <%= link_to 'Sign In', new_user_session_path %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<%end%>
+
