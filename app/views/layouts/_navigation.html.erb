@@ -11,7 +11,7 @@
         <%= link_to "INSTApic", root_path, class: "branding"%>
       </li>
       <li class="nav-item nav-link">
-        <%= link_to "About", pages_about_path %>
+        <%= link_to current_user.email, edit_user_registration_path %>
       </li>
       <li class="nav-item nav-link">
         <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
@@ -23,7 +23,9 @@
 <%else%>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-liq">
-  <span class="navbar-brand mb-0 h1 main-logo branding">INSTApic</span>
+  <span class="navbar-brand mb-0 h1 main-logo branding">
+    <%= link_to "INSTApic", root_path, class: "branding"%>
+  </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
