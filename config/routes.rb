@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photos
   devise_for :users
   root 'pages#mainpage'
   get 'pages/about'
