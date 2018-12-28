@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, exept: [:index, :show]
 
   # GET /photos
   # GET /photos.json
@@ -14,7 +15,7 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    @photo = Photo.new
+    @photo = current_user.photos.build
   end
 
   # GET /photos/1/edit
@@ -24,7 +25,7 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(photo_params)
+    @photo = current_user.photos.build(photo_params)
 
     #respond_to do |format|
       if @photo.save
@@ -53,6 +54,14 @@ class PhotosController < ApplicationController
   end
 
   private
+
+    def owner
+      @photo = current_user.photos.find_by(id: params[:id])
+      redirect_to photos_path, notice: "You can't edit this photo"
+      if @photo.nil?
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
       @photo = Photo.find(params[:id])
