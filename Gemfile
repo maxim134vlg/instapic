@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'devise', '~> 4.5'
+gem "paperclip", "~> 6.0.0"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -1,34 +1,22 @@
-<div class="jumbotron">
-<h1 class="display-4">Photos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @photos.each do |photo| %>
-      <tr>
-        <td><%= photo.description %></td>
-        <td><%= link_to 'Show', photo %></td>
-        <td><% if photo.user == current_user %>
-          <%= link_to 'Edit', edit_photo_path(photo) %>
-          <%end%>
-        </td>
-        <td><% if photo.user == current_user %>
-          <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%end%>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @photos.each do |photo| %>
+  <div class="card text-center" style="width: 20rem;">
+    <%= image_tag photo.image.url(:thumb), class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= photo.description %></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <%= photo.user.email if photo.user %> <br>
+          <%= link_to 'Show', photo, class: "btn btn-primary" %>
+          <% if photo.user == current_user %>
+         | <%= link_to 'Edit', edit_photo_path(photo), class: "btn btn-primary" %> |<br>
+          <% end %>
+          <% if photo.user == current_user %>
+          <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+          <% end %>   
+    </div>
+</div>
+<% end %>
 
 <br>
 <% if user_signed_in? %>
 <%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
 <% end %>
-</div>
