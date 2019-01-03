@@ -1,10 +1,12 @@
+<%= link_to "Subscribe", subscribe_profile_path(@user) %>
+<%= link_to "Unsubscribe", subscribe_profile_path(@user) %>
 <% @photos.each do |photo| %>
   <div class="card text-center float-right" style="width: 20rem;">
     <%= image_tag photo.image.url(:medium) %>
     <div class="card-body">
       <h5 class="card-title"><%= photo.description %></h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <%= photo.user.email if photo.user %> <br>
+      <%= link_to photo.user.email, profile_path(photo.user_id) if photo.user %> <br>
           <%= link_to 'Show', photo, class: "btn btn-primary" %>
           <% if photo.user == current_user %>
          | <%= link_to 'Edit', edit_photo_path(photo), class: "btn btn-primary" %> |<br>
@@ -14,11 +16,4 @@
           <% end %>   
     </div>
   </div>
-<% end %>
-
-<hr>
-
-
-<% if user_signed_in? %>
-<%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
 <% end %>
